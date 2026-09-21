@@ -1,120 +1,180 @@
 "use client";
 
-import { SKILLS } from "@/lib/skills";
-import {
-  Code,
-  Palette,
-  Terminal,
-  Zap,
-  Server,
-  Smartphone,
-  GitBranch,
-  Database,
-  Globe,
-  Brain,
-  Cloud,
-  Send,
-  Box,
-} from "lucide-react";
+import React from "react";
 import { motion } from "framer-motion";
+import { TECH_STACK, TOOLS, SkillItem } from "@/lib/skills";
+import {
+  SiCplusplus,
+  SiJavascript,
+  SiTypescript,
+  SiGo,
+  SiNodedotjs,
+  SiReact,
+  SiSolidity,
+  SiMongodb,
+  SiRedux,
+  SiNextdotjs,
+  SiGit,
+  SiFirebase,
+  SiRedis,
+  SiDocker,
+  SiKubernetes,
+  SiPostgresql,
+  SiPython,
+  SiHaskell,
+  SiTailwindcss,
+  SiMui,
+  SiPostman,
+  SiApachekafka,
+  SiGooglechrome,
+  SiIntellijidea,
+} from "react-icons/si";
+import { FaRust, FaAws, FaJava, FaApple } from "react-icons/fa6";
+import { TbBrandVscode } from "react-icons/tb";
 
-const iconMap: Record<string, React.ReactNode> = {
-  Code: <Code size={24} />,
-  Palette: <Palette size={24} />,
-  Terminal: <Terminal size={24} />,
-  Zap: <Zap size={24} />,
-  Server: <Server size={24} />,
-  Smartphone: <Smartphone size={24} />,
-  GitBranch: <GitBranch size={24} />,
-  Database: <Database size={24} />,
-  Globe: <Globe size={24} />,
-  Brain: <Brain size={24} />,
-  Cloud: <Cloud size={24} />,
-  Send: <Send size={24} />,
-  Box: <Box size={24} />,
+const iconMap: Record<
+  string,
+  React.ComponentType<{ size?: number; color?: string; className?: string }>
+> = {
+  Cplusplus: SiCplusplus,
+  Javascript: SiJavascript,
+  Typescript: SiTypescript,
+  Go: SiGo,
+  Nodedotjs: SiNodedotjs,
+  React: SiReact,
+  Solidity: SiSolidity,
+  Mongodb: SiMongodb,
+  Redux: SiRedux,
+  Nextdotjs: SiNextdotjs,
+  Git: SiGit,
+  Firebase: SiFirebase,
+  Redis: SiRedis,
+  Docker: SiDocker,
+  Kubernetes: SiKubernetes,
+  Postgresql: SiPostgresql,
+  Python: SiPython,
+  Java: FaJava,
+  Haskell: SiHaskell,
+  Tailwind: SiTailwindcss,
+  MUI: SiMui,
+  Postman: SiPostman,
+  Rust: FaRust,
+  AWS: FaAws,
+  Kafka: SiApachekafka,
+  Apple: FaApple,
+  Chrome: SiGooglechrome,
+  VsCode: TbBrandVscode,
+  IntelliJ: SiIntellijidea,
 };
 
-export default function Skills() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.04,
     },
-  };
+  },
+};
 
-  const categoryVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.85, y: 15 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring" as const,
+      stiffness: 260,
+      damping: 20,
     },
-  };
+  },
+};
 
-  const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 },
-    },
-  };
+function SkillPill({ item }: { item: SkillItem }) {
+  const IconComponent = iconMap[item.iconKey];
 
   return (
-    <section id="skills" className="py-20 bg-transparent">
+    <motion.div
+      variants={itemVariants}
+      whileHover={{ scale: 1.07, y: -3 }}
+      whileTap={{ scale: 0.96 }}
+      className="group relative flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#0d091b]/85 border-[1.5px] border-[#9333ea]/70 hover:border-purple-400 backdrop-blur-md shadow-[0_0_12px_rgba(147,51,234,0.22)] hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] hover:bg-[#180f33]/90 transition-all duration-300 cursor-pointer select-none"
+    >
+      <div className="flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+        {IconComponent ? (
+          <IconComponent size={22} color={item.color} />
+        ) : (
+          <span className="w-5 h-5 rounded-full bg-purple-500/30" />
+        )}
+      </div>
+      <span className="text-white font-mono text-sm sm:text-base font-medium tracking-wide whitespace-nowrap">
+        {item.name}
+      </span>
+    </motion.div>
+  );
+}
+
+export default function Skills() {
+  return (
+    <section id="skills" className="py-20 md:py-28 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section 1: Professional Skillset */}
+        <div className="text-center mb-10 md:mb-14">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl font-bold font-mono tracking-wide text-white"
+          >
+            Professional{" "}
+            <span className="text-purple-400 drop-shadow-[0_0_18px_rgba(192,132,252,0.65)]">
+              Skillset
+            </span>
+          </motion.h2>
+        </div>
+
+        {/* Tech Stack Pills Container */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-12"
+          viewport={{ once: true, margin: "-50px" }}
+          className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-5 max-w-5xl mx-auto pb-16 md:pb-24"
         >
-          {/* Section Title */}
-          <motion.div variants={categoryVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-              Skills & Technologies
-            </h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-500 rounded"></div>
-          </motion.div>
+          {TECH_STACK.map((item) => (
+            <SkillPill key={item.name} item={item} />
+          ))}
+        </motion.div>
 
-          {/* Skills by Category */}
-          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SKILLS.map((skillGroup) => (
-              <motion.div
-                key={skillGroup.category}
-                variants={categoryVariants}
-                className="bg-slate-900/50 backdrop-blur p-6 rounded-lg border border-slate-800"
-              >
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
-                  {skillGroup.category}
-                </h3>
-                <motion.div
-                  variants={containerVariants}
-                  className="flex flex-wrap gap-3"
-                >
-                  {skillGroup.skills.map((skill) => (
-                    <motion.div
-                      key={skill.name}
-                      variants={skillVariants}
-                      whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-slate-800/60 backdrop-blur rounded-lg border border-slate-700/60 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group cursor-default"
-                    >
-                      <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {iconMap[skill.icon]}
-                      </span>
-                      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        {skill.name}
-                      </span>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+        {/* Section 2: Tools I use */}
+        <div className="text-center mb-10 md:mb-14">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl font-bold font-mono tracking-wide text-white"
+          >
+            <span className="text-purple-400 drop-shadow-[0_0_18px_rgba(192,132,252,0.65)]">
+              Tools
+            </span>{" "}
+            I use
+          </motion.h2>
+        </div>
+
+        {/* Tools Pills Container */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-5 max-w-3xl mx-auto"
+        >
+          {TOOLS.map((item) => (
+            <SkillPill key={item.name} item={item} />
+          ))}
         </motion.div>
       </div>
     </section>
