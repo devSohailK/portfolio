@@ -35,10 +35,10 @@ export default function Experience() {
         >
           {/* Section Title */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-              Experience
+            <h2 className="text-4xl md:text-5xl font-bold font-mono text-white mb-2">
+              Work <span className="text-purple-400">Experience</span>
             </h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-500 rounded"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-purple-400 rounded"></div>
           </motion.div>
 
           {/* Timeline */}
@@ -47,48 +47,52 @@ export default function Experience() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative pl-8 border-l-2 border-blue-500"
+                className="relative pl-8 border-l-2 border-purple-500/50"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-[-11px] top-0 w-5 h-5 bg-blue-600 rounded-full border-4 border-[#140f23]"></div>
+                <div className="absolute left-[-11px] top-4 w-5 h-5 bg-purple-500 rounded-full border-4 border-[#140f23] shadow-[0_0_12px_rgba(168,85,247,0.9)]"></div>
 
-                {/* Content */}
-                <div className="space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                {/* Card Container with Framer Motion Hover & Neon Shadow */}
+                <motion.div
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-slate-900/50 backdrop-blur p-6 sm:p-7 rounded-xl border border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] transition-all duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <h3 className="text-2xl font-bold font-mono text-white">
                       {exp.position}
                     </h3>
-                    <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                    <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full bg-purple-950/60 text-purple-300 border border-purple-500/40 w-fit">
                       {exp.period}
                     </span>
                   </div>
 
-                  <p className="text-lg font-semibold text-slate-700 dark:text-slate-300">
+                  <p className="text-lg font-semibold text-purple-400/90 mb-3">
                     {exp.company}
                   </p>
 
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-300 leading-relaxed font-sans mb-4">
                     {exp.description}
                   </p>
 
                   {/* Responsibilities */}
-                  <div className="space-y-2 mt-4">
-                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <div className="space-y-2 mt-4 pt-4 border-t border-purple-900/30">
+                    <p className="text-sm font-semibold text-slate-200">
                       Key Responsibilities:
                     </p>
                     <ul className="space-y-2">
                       {exp.responsibilities.map((resp, idx) => (
                         <li
                           key={idx}
-                          className="text-slate-600 dark:text-slate-400 flex items-start gap-3"
+                          className="text-slate-300 flex items-start gap-3 text-sm font-sans"
                         >
-                          <span className="text-blue-600 mt-1">→</span>
+                          <span className="text-purple-400 mt-0.5">→</span>
                           <span>{resp}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </motion.div>

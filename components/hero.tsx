@@ -36,9 +36,9 @@ export default function Hero() {
         >
           {/* Name */}
           <motion.div variants={itemVariants}>
-            <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white">
-              Hi, I'm{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">
+            <h1 className="text-5xl md:text-7xl font-bold font-mono text-white">
+              Hi, I&apos;m{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-300">
                 Sohail Khan
               </span>
             </h1>
@@ -46,40 +46,46 @@ export default function Hero() {
 
           {/* Title */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-2xl md:text-4xl font-semibold text-slate-700 dark:text-slate-300">
+            <h2 className="text-2xl md:text-4xl font-semibold font-mono text-slate-300">
               {PERSONAL_INFO.title}
             </h2>
           </motion.div>
 
           {/* Description */}
           <motion.div variants={itemVariants}>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-sans">
               {PERSONAL_INFO.tagline}
             </p>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with Framer Motion Hover & Neon Shadow */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.96 }}
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold  hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] transition-all font-mono text-sm"
             >
-              View My Work <ArrowRight size={20} />
-            </a>
-            <a
+              View My Work <ArrowRight size={18} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.96 }}
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg font-semibold hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900/60 backdrop-blur border border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] text-white rounded-xl font-semibold transition-all font-mono text-sm"
             >
               Contact Me
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.96 }}
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg font-semibold hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900/40 backdrop-blur border border-purple-500/20 hover:border-purple-400 hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] text-slate-300 hover:text-white rounded-xl font-semibold transition-all font-mono text-sm"
             >
-              <Code2 size={20} /> GitHub
-            </a>
+              <Code2 size={18} /> GitHub
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

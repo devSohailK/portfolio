@@ -37,52 +37,53 @@ export default function Projects() {
         >
           {/* Section Title */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-              Featured Projects
+            <h2 className="text-4xl md:text-5xl font-bold font-mono text-white mb-2">
+              Featured <span className="text-purple-400">Projects</span>
             </h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-500 rounded"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-purple-400 rounded"></div>
           </motion.div>
 
-          {/* Projects Grid */}
+          {/* Projects Grid with Framer Motion Hover & Neon Shadow */}
           <motion.div variants={containerVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {PROJECTS.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="bg-slate-900/50 backdrop-blur rounded-lg overflow-hidden border border-slate-800 hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-lg"
+                whileHover={{ y: -6, scale: 1.015 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-slate-900/50 backdrop-blur rounded-xl overflow-hidden border border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Project Card */}
-                <div className="p-6 space-y-4">
+                {/* Project Card Content */}
+                <div className="p-6 sm:p-7 space-y-4">
                   {/* Category Badge */}
                   <div className="inline-block">
-                    <span className="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 rounded-full">
+                    <span className="px-3 py-1 text-xs font-semibold text-purple-300 bg-purple-950/60 border border-purple-500/40 rounded-full">
                       {project.category}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-2xl font-bold font-mono text-white">
                     {project.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-300 leading-relaxed font-sans">
                     {project.shortDescription}
                   </p>
 
                   {/* Key Features */}
                   <div>
-                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                    <p className="text-sm font-semibold text-slate-200 mb-2">
                       Key Features:
                     </p>
                     <ul className="space-y-1">
                       {project.keyFeatures.slice(0, 3).map((feature, index) => (
                         <li
                           key={index}
-                          className="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"
+                          className="text-sm text-slate-300 flex items-start gap-2 font-sans"
                         >
-                          <span className="text-blue-600 mt-0.5">✓</span>
+                          <span className="text-purple-400 mt-0.5">✓</span>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -91,50 +92,56 @@ export default function Projects() {
 
                   {/* Technologies */}
                   <div>
-                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                    <p className="text-sm font-semibold text-slate-200 mb-2">
                       Technologies:
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs px-3 py-1 bg-slate-800/80 text-slate-300 rounded-full font-medium border border-slate-700/50"
+                          className="text-xs px-3 py-1 bg-purple-950/40 text-purple-300 rounded-full font-medium border border-purple-500/30"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
+                </div>
 
-                  {/* Links */}
-                  <div className="flex gap-3 pt-4 border-t border-slate-800">
+                {/* Links Footer */}
+                <div className="p-6 pt-0">
+                  <div className="flex gap-3 pt-4 border-t border-purple-900/30">
                     <Link
                       href={`/projects/${project.id}`}
-                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex-1 justify-center"
+                      className="flex items-center gap-2 px-4 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold hover:shadow-[0_0_18px_rgba(168,85,247,0.22)] transition-all flex-1 justify-center text-sm"
                     >
                       View Details <ArrowRight size={18} />
                     </Link>
                     {project.links.github && (
-                      <a
+                      <motion.a
+                        whileHover={{ scale: 1.08 }}
+                        whileTap={{ scale: 0.95 }}
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-slate-300 hover:text-blue-400 border border-slate-800 hover:border-slate-700 rounded-lg transition-colors"
+                        className="p-2.5 text-slate-300 hover:text-purple-300 border border-purple-500/30 hover:border-purple-400 rounded-lg transition-colors"
                         aria-label="GitHub"
                       >
                         <Code2 size={20} />
-                      </a>
+                      </motion.a>
                     )}
                     {project.links.demo && (
-                      <a
+                      <motion.a
+                        whileHover={{ scale: 1.08 }}
+                        whileTap={{ scale: 0.95 }}
                         href={project.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-slate-300 hover:text-blue-400 border border-slate-800 hover:border-slate-700 rounded-lg transition-colors"
+                        className="p-2.5 text-slate-300 hover:text-purple-300 border border-purple-500/30 hover:border-purple-400 rounded-lg transition-colors"
                         aria-label="Live Demo"
                       >
                         <ExternalLink size={20} />
-                      </a>
+                      </motion.a>
                     )}
                   </div>
                 </div>

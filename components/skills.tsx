@@ -39,12 +39,9 @@ const iconMap: Record<
   Cplusplus: SiCplusplus,
   Javascript: SiJavascript,
   Typescript: SiTypescript,
-  Go: SiGo,
   Nodedotjs: SiNodedotjs,
   React: SiReact,
-  Solidity: SiSolidity,
   Mongodb: SiMongodb,
-  Redux: SiRedux,
   Nextdotjs: SiNextdotjs,
   Git: SiGit,
   Firebase: SiFirebase,
@@ -54,14 +51,10 @@ const iconMap: Record<
   Postgresql: SiPostgresql,
   Python: SiPython,
   Java: FaJava,
-  Haskell: SiHaskell,
   Tailwind: SiTailwindcss,
-  MUI: SiMui,
   Postman: SiPostman,
-  Rust: FaRust,
   AWS: FaAws,
   Kafka: SiApachekafka,
-  Apple: FaApple,
   Chrome: SiGooglechrome,
   VsCode: TbBrandVscode,
   IntelliJ: SiIntellijidea,
@@ -129,7 +122,7 @@ export default function Skills() {
             className="text-3xl md:text-5xl font-bold font-mono tracking-wide text-white"
           >
             Professional{" "}
-            <span className="text-purple-400 drop-shadow-[0_0_18px_rgba(192,132,252,0.65)]">
+            <span className="text-purple-400">
               Skillset
             </span>
           </motion.h2>
@@ -157,7 +150,7 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-5xl font-bold font-mono tracking-wide text-white"
           >
-            <span className="text-purple-400 drop-shadow-[0_0_18px_rgba(192,132,252,0.65)]">
+            <span className="text-purple-400">
               Tools
             </span>{" "}
             I use
