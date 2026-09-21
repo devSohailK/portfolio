@@ -18,29 +18,56 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: "smartdoc",
-    title: "SmartDoc-SaaS",
-    category: "AI / Full-Stack",
+    id: "devblog",
+    title: "DevBlog – Content Management & Blogging Platform",
+    category: "Full-Stack",
     shortDescription:
-      "An AI-powered document analysis tool that allows users to upload PDFs and query their content using a context-aware chatbot.",
+      "Built a full-stack blogging platform with authentication, blog management, and user profiles. Implemented responsive UI and cloud-based data storage using modern web technologies.",
     fullDescription:
-      "SmartDoc is a sophisticated SaaS application that leverages advanced AI and machine learning to provide intelligent document analysis. Users can upload PDF documents and interact with them through a natural language interface, enabling quick information retrieval and analysis without manually reading through lengthy documents.",
-    technologies: ["Next.js", "Node.js", "MongoDB", "Gemini API", "TypeScript", "Tailwind CSS"],
+      "DevBlog is a comprehensive content management and blogging platform designed for developers and creators. It features secure authentication, robust blog management, personalized user profiles, a responsive modern UI, and scalable cloud-based data storage.",
+    technologies: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS", "TypeScript"],
     keyFeatures: [
-      "AI-powered document analysis",
-      "Retrieval-Augmented Generation (RAG)",
-      "Gemini API integration",
-      "Context-aware responses",
-      "PDF document processing",
-      "User authentication",
-      "Document storage and management",
+      "Authentication & user profiles",
+      "Blog management & content publishing",
+      "Responsive modern user interface",
+      "Cloud-based data storage",
+      "Markdown & rich content editing",
+      "Secure session handling",
     ],
     problem:
-      "Users often struggle to quickly extract and understand information from lengthy PDF documents. Manual document analysis is time-consuming and inefficient.",
+      "Content creators and developers need a modern, streamlined, and responsive blogging platform that provides intuitive content management without unnecessary complexity.",
     solution:
-      "Built an intelligent document analysis platform using RAG (Retrieval-Augmented Generation) that allows users to upload PDFs and ask questions about their content. The system uses Gemini API to provide context-aware, accurate responses.",
+      "Built a full-stack blogging platform with authentication, blog management, and user profiles. Implemented responsive UI and cloud-based data storage using modern web technologies.",
     contribution:
-      "Designed and implemented the full-stack application, including the RAG pipeline, API endpoints, PDF processing, and responsive UI components.",
+      "Designed and developed the full-stack web application, implemented user authentication and profile management, designed the responsive UI, and integrated cloud-based storage.",
+    links: {
+      github: "https://github.com",
+      demo: "",
+    },
+  },
+  {
+    id: "api-hit-monitoring",
+    title: "API Hit Monitoring Platform",
+    category: "Backend / Distributed Systems",
+    shortDescription:
+      "Built a scalable API monitoring platform to track API health, performance, and availability. Implemented a distributed backend using PostgreSQL, MongoDB, RabbitMQ, Docker, and pgAdmin.",
+    fullDescription:
+      "API Hit Monitoring Platform is a distributed backend solution engineered to track real-time API health, traffic patterns, performance metrics, and endpoint availability at scale. It leverages RabbitMQ for message queuing, a dual-database architecture with PostgreSQL and MongoDB, and containerized deployment with Docker.",
+    technologies: ["PostgreSQL", "MongoDB", "RabbitMQ", "Docker", "Node.js", "pgAdmin"],
+    keyFeatures: [
+      "Real-time API health & availability tracking",
+      "Distributed backend architecture",
+      "Message queuing with RabbitMQ",
+      "PostgreSQL relational analytics & storage",
+      "MongoDB high-throughput log storage",
+      "Docker containerization & pgAdmin management",
+    ],
+    problem:
+      "Managing modern microservices and high-traffic APIs requires real-time insight into endpoint performance, uptime, and request failures before issues impact end users.",
+    solution:
+      "Built a scalable API monitoring platform to track API health, performance, and availability. Implemented a distributed backend using PostgreSQL, MongoDB, RabbitMQ, Docker, and pgAdmin.",
+    contribution:
+      "Architected and implemented the distributed backend services, integrated RabbitMQ message queuing, designed database schemas for PostgreSQL and MongoDB, and containerized the infrastructure with Docker.",
     links: {
       github: "https://github.com",
       demo: "",

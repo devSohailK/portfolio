@@ -4,14 +4,14 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Metadata } from "next";
 
-const project = PROJECTS.find((p) => p.id === "smartdoc");
+const project = PROJECTS.find((p) => p.id === "devblog");
 
 export const metadata: Metadata = {
-  title: "SmartDoc-SaaS | Sohail Khan",
-  description: "AI-powered document analysis tool built with Next.js, Node.js, and Gemini API",
+  title: "DevBlog – Content Management & Blogging Platform | Sohail Khan",
+  description: "Built a full-stack blogging platform with authentication, blog management, and user profiles.",
 };
 
-export default function SmartDocPage() {
+export default function DevBlogPage() {
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
