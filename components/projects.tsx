@@ -26,7 +26,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="projects" className="py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -50,7 +50,7 @@ export default function Projects() {
                 key={project.id}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-lg"
+                className="bg-slate-900/50 backdrop-blur rounded-lg overflow-hidden border border-slate-800 hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
                 {/* Project Card */}
                 <div className="p-6 space-y-4">
@@ -98,7 +98,7 @@ export default function Projects() {
                       {project.technologies.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs px-3 py-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full font-medium"
+                          className="text-xs px-3 py-1 bg-slate-800/80 text-slate-300 rounded-full font-medium border border-slate-700/50"
                         >
                           {tech}
                         </span>
@@ -107,7 +107,7 @@ export default function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-slate-700">
+                  <div className="flex gap-3 pt-4 border-t border-slate-800">
                     <Link
                       href={`/projects/${project.id}`}
                       className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex-1 justify-center"
@@ -119,7 +119,7 @@ export default function Projects() {
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700 rounded-lg transition-colors"
+                        className="p-2 text-slate-300 hover:text-blue-400 border border-slate-800 hover:border-slate-700 rounded-lg transition-colors"
                         aria-label="GitHub"
                       >
                         <Code2 size={20} />
@@ -130,7 +130,7 @@ export default function Projects() {
                         href={project.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700 rounded-lg transition-colors"
+                        className="p-2 text-slate-300 hover:text-blue-400 border border-slate-800 hover:border-slate-700 rounded-lg transition-colors"
                         aria-label="Live Demo"
                       >
                         <ExternalLink size={20} />

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #140f23;
+  --foreground: #f1f5f9;
 }
 
 @theme inline {
@@ -12,15 +12,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(
+    to left,
+    #1b1429,
+    #140f23
+  );
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }

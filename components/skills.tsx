@@ -64,7 +64,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-950">
+    <section id="skills" className="py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -87,7 +87,7 @@ export default function Skills() {
               <motion.div
                 key={skillGroup.category}
                 variants={categoryVariants}
-                className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800"
+                className="bg-slate-900/50 backdrop-blur p-6 rounded-lg border border-slate-800"
               >
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
                   {skillGroup.category}
@@ -101,7 +101,7 @@ export default function Skills() {
                       key={skill.name}
                       variants={skillVariants}
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group cursor-default"
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-800/60 backdrop-blur rounded-lg border border-slate-700/60 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group cursor-default"
                     >
                       <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {iconMap[skill.icon]}

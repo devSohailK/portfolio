@@ -25,7 +25,7 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="education" className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -48,7 +48,7 @@ export default function Education() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 p-8 rounded-lg border-l-4 border-blue-600 hover:shadow-lg transition-shadow"
+                className="bg-slate-900/50 backdrop-blur p-8 rounded-lg border-l-4 border-blue-600 border-t border-r border-b border-slate-800 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">

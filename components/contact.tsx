@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-slate-950">
+    <section id="contact" className="py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -94,7 +94,7 @@ export default function Contact() {
                 {/* Email */}
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group"
+                  className="flex items-start gap-4 p-4 bg-slate-900/50 backdrop-blur rounded-lg border border-slate-800 hover:border-blue-500 transition-colors group"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-lg bg-blue-100 dark:bg-blue-900 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
                     <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
@@ -110,7 +110,7 @@ export default function Contact() {
                 {/* Phone */}
                 <a
                   href={`tel:${PERSONAL_INFO.phone}`}
-                  className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 transition-colors group"
+                  className="flex items-start gap-4 p-4 bg-slate-900/50 backdrop-blur rounded-lg border border-slate-800 hover:border-blue-500 transition-colors group"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-lg bg-blue-100 dark:bg-blue-900 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
                     <Phone className="h-5 w-5 text-blue-600 dark:text-blue-400" />
@@ -165,7 +165,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 bg-slate-900/60 backdrop-blur border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="Your name"
                   />
                 </div>
@@ -182,7 +182,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 bg-slate-900/60 backdrop-blur border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -199,7 +199,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 bg-slate-900/60 backdrop-blur border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -216,7 +216,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-2 bg-slate-900/60 backdrop-blur border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>

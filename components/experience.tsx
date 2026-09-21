@@ -24,7 +24,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-slate-950">
+    <section id="experience" className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -50,7 +50,7 @@ export default function Experience() {
                 className="relative pl-8 border-l-2 border-blue-500"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-[-11px] top-0 w-5 h-5 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950"></div>
+                <div className="absolute left-[-11px] top-0 w-5 h-5 bg-blue-600 rounded-full border-4 border-[#140f23]"></div>
 
                 {/* Content */}
                 <div className="space-y-3">

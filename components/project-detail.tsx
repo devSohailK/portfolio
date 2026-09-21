@@ -99,7 +99,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
         {/* Sidebar */}
         <div className="space-y-8">
           {/* Technologies */}
-          <motion.div variants={itemVariants} className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800">
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur p-6 rounded-lg border border-slate-800">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
               Technologies
             </h3>
@@ -107,7 +107,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full border border-slate-200 dark:border-slate-700 font-medium"
+                  className="px-3 py-1 text-sm bg-slate-800/80 text-slate-300 rounded-full border border-slate-700/50 font-medium"
                 >
                   {tech}
                 </span>
@@ -116,7 +116,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           </motion.div>
 
           {/* Key Features */}
-          <motion.div variants={itemVariants} className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800">
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur p-6 rounded-lg border border-slate-800">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
               Key Features
             </h3>

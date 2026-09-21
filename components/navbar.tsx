@@ -11,7 +11,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-[#140f23]/80 backdrop-blur-md border-b border-slate-800/80 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -81,7 +81,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div className="md:hidden bg-[#140f23]/95 backdrop-blur-md border-t border-slate-800">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {NAV_ITEMS.map((item) => (
               <a

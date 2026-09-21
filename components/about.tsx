@@ -24,7 +24,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="about" className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -55,7 +55,7 @@ export default function About() {
 
           {/* Highlights */}
           <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
+            <div className="bg-slate-900/50 backdrop-blur p-6 rounded-lg border border-slate-800">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
                 Foundations
               </h3>
@@ -75,7 +75,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
+            <div className="bg-slate-900/50 backdrop-blur p-6 rounded-lg border border-slate-800">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
                 Expertise
               </h3>
