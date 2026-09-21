@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, PT_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
+import ParticleBackground from "@/components/particle-background";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ptMono = PT_Mono({
+  weight: "400",
+  variable: "--font-pt-mono",
   subsets: ["latin"],
 });
 
@@ -36,11 +38,14 @@ export default function RootLayout({ children }: LayoutProps) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${outfit.variable} ${ptMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col text-slate-100">
+      <body className="min-h-full flex flex-col text-slate-100 relative">
         <ThemeProvider>
-          {children}
+          <ParticleBackground />
+          <div className="relative z-10 flex flex-col flex-1">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
