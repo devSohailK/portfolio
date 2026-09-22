@@ -3,6 +3,8 @@ import { Outfit, PT_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import ParticleBackground from "@/components/particle-background";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -40,12 +42,19 @@ export default function RootLayout({ children }: LayoutProps) {
       suppressHydrationWarning
       className={`${outfit.variable} ${ptMono.variable} dark h-full antialiased`}
     >
+      
       <body className="min-h-full flex flex-col text-slate-100 relative">
         <ThemeProvider>
           <ParticleBackground />
+          <Navbar />
+
           <div className="relative z-10 flex flex-col flex-1">
             {children}
           </div>
+
+
+          <Footer />
+
         </ThemeProvider>
       </body>
     </html>

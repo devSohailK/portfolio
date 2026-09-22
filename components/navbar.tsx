@@ -80,7 +80,7 @@ export default function Navbar() {
                 (!hoveredPath && activeSection === item.href);
 
               return (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   onMouseEnter={() => setHoveredPath(item.href)}
@@ -109,7 +109,7 @@ export default function Navbar() {
                       }}
                     />
                   )}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -172,7 +172,7 @@ export default function Navbar() {
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href;
               return (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-base font-medium transition-all ${
@@ -187,26 +187,26 @@ export default function Navbar() {
                 >
                   {navIcons[item.label]}
                   <span>{item.label}</span>
-                </a>
+                </Link>
               );
             })}
             <div className="px-3 py-3 flex gap-3 border-t border-purple-900/30 mt-2">
-              <a
+              <Link
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-slate-300 hover:text-purple-400"
               >
                 <Code2 size={18} /> GitHub
-              </a>
-              <a
+              </Link>
+              <Link
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-slate-300 hover:text-purple-400"
               >
                 <Briefcase size={18} /> LinkedIn
-              </a>
+              </Link>
             </div>
           </div>
         </div>
