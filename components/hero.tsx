@@ -79,7 +79,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              href="https://github.com"
+              href="https://github.com/devSohailK"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900/40 backdrop-blur border border-purple-500/20 hover:border-purple-400 hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] text-slate-300 hover:text-white rounded-xl font-semibold transition-all font-mono text-sm"

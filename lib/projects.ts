@@ -41,8 +41,8 @@ export const PROJECTS: Project[] = [
     contribution:
       "Designed and developed the full-stack web application, implemented user authentication and profile management, designed the responsive UI, and integrated cloud-based storage.",
     links: {
-      github: "https://github.com",
-      demo: "",
+      github: "https://github.com/devSohailK/DevBlog.git",
+      demo: "https://dev-blog-two-mauve.vercel.app/",
     },
   },
   {
@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
     contribution:
       "Architected and implemented the distributed backend services, integrated RabbitMQ message queuing, designed database schemas for PostgreSQL and MongoDB, and containerized the infrastructure with Docker.",
     links: {
-      github: "https://github.com",
+      github: "https://github.com/devSohailK/api-monitoring-platform.git",
       demo: "",
     },
   },
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     contribution:
       "Implemented the OpenAI integration, built the template system, and created responsive UI components for content customization and generation.",
     links: {
-      github: "https://github.com",
+      github: "https://github.com/devSohailK/SmartDraft.git",
       demo: "",
     },
   },
@@ -129,8 +129,8 @@ export const PROJECTS: Project[] = [
     contribution:
       "Developed both the mobile application using React Native/Expo and the backend API. Implemented authentication, job management logic, and cost calculation algorithms.",
     links: {
-      github: "https://github.com",
-      demo: "",
+      github: "https://github.com/WeCodePK/ClickPrintMobile.git",
+      demo: "https://app.clickprint.pk",
     },
   },
 ];

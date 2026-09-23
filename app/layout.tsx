@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Sohail Khan | Full-Stack Software Engineer",
   description:
     "Portfolio of Sohail Khan, a Full-Stack Software Engineer building modern web, mobile, and AI-powered applications.",
+  icons: {
+    icon: "/icon.svg", 
+  },
   keywords: ["Full-Stack Developer", "React", "Next.js", "Node.js", "Software Engineer"],
   authors: [{ name: "Sohail Khan" }],
   openGraph: {
@@ -52,9 +55,7 @@ export default function RootLayout({ children }: LayoutProps) {
             {children}
           </div>
 
-
           <Footer />
-
         </ThemeProvider>
       </body>
     </html>

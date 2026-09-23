@@ -179,7 +179,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_22px_rgba(168,85,247,0.7)] transition-all"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] transition-all"
               >
                 <ExternalLink size={20} /> Live Demo
               </motion.a>
