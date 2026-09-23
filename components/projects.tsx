@@ -2,6 +2,7 @@
 
 import { PROJECTS } from "@/lib/projects";
 import { ExternalLink, Code2, ArrowRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -127,7 +128,7 @@ export default function Projects() {
                         className="p-2.5 text-slate-300 hover:text-purple-300 border border-purple-500/30 hover:border-purple-400 rounded-lg transition-colors"
                         aria-label="GitHub"
                       >
-                        <Code2 size={20} />
+                        <FaGithub size={20} />
                       </motion.a>
                     )}
                     {project.links.demo && (

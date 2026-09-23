@@ -67,7 +67,7 @@ export default function Education() {
                       {edu.institution}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-3 font-mono">
                       <span className="text-sm font-medium text-slate-400">
                         {edu.startYear} – {edu.endYear}
                       </span>

@@ -62,31 +62,31 @@ export default function Experience() {
                     <h3 className="text-2xl font-bold font-mono text-white">
                       {exp.position}
                     </h3>
-                    <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full bg-purple-950/60 text-purple-300 border border-purple-500/40 w-fit">
+                    <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full bg-purple-950/60 text-purple-300 border border-purple-500/40 w-fit font-mono">
                       {exp.period}
                     </span>
                   </div>
 
-                  <p className="text-lg font-semibold text-purple-400/90 mb-3">
+                  <p className="text-lg font-semibold text-purple-400 mb-3">
                     {exp.company}
                   </p>
 
-                  <p className="text-slate-300 leading-relaxed font-sans mb-4">
+                  <p className="text-sm text-slate-300 mb-4 leading-relaxed font-sans">
                     {exp.description}
                   </p>
 
                   {/* Responsibilities */}
-                  <div className="space-y-2 mt-4 pt-4 border-t border-purple-900/30">
-                    <p className="text-sm font-semibold text-slate-200">
-                      Key Responsibilities:
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-purple-300 font-mono">
+                      Key Responsibilities & Achievements:
                     </p>
                     <ul className="space-y-2">
-                      {exp.responsibilities.map((resp, idx) => (
+                      {exp.responsibilities.map((resp, i) => (
                         <li
-                          key={idx}
-                          className="text-slate-300 flex items-start gap-3 text-sm font-sans"
+                          key={i}
+                          className="text-sm text-slate-300 flex items-start gap-2 font-sans"
                         >
-                          <span className="text-purple-400 mt-0.5">→</span>
+                          <span className="text-purple-400 mt-1 font-bold">•</span>
                           <span>{resp}</span>
                         </li>
                       ))}

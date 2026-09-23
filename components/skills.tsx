@@ -7,12 +7,9 @@ import {
   SiCplusplus,
   SiJavascript,
   SiTypescript,
-  SiGo,
   SiNodedotjs,
   SiReact,
-  SiSolidity,
   SiMongodb,
-  SiRedux,
   SiNextdotjs,
   SiGit,
   SiFirebase,
@@ -21,15 +18,13 @@ import {
   SiKubernetes,
   SiPostgresql,
   SiPython,
-  SiHaskell,
   SiTailwindcss,
-  SiMui,
   SiPostman,
   SiApachekafka,
   SiGooglechrome,
   SiIntellijidea,
 } from "react-icons/si";
-import { FaRust, FaAws, FaJava, FaApple } from "react-icons/fa6";
+import { FaAws, FaJava } from "react-icons/fa6";
 import { TbBrandVscode } from "react-icons/tb";
 
 const iconMap: Record<

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, PT_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/lib/theme-provider";
 import ParticleBackground from "@/components/particle-background";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -42,21 +41,17 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${outfit.variable} ${ptMono.variable} dark h-full antialiased`}
     >
-      
       <body className="min-h-full flex flex-col text-slate-100 relative">
-        <ThemeProvider>
-          <ParticleBackground />
-          <Navbar />
+        <ParticleBackground />
+        <Navbar />
 
-          <div className="relative z-10 flex flex-col flex-1">
-            {children}
-          </div>
+        <div className="relative z-10 flex flex-col flex-1">
+          {children}
+        </div>
 
-          <Footer />
-        </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

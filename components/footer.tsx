@@ -1,7 +1,8 @@
 "use client";
 
-import { Code2, Briefcase, Mail } from "lucide-react";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -25,22 +26,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold font-mono text-white mb-3">Quick Links</h3>
             <ul className="space-y-2 text-sm font-mono">
               <li>
-                <a href="#about" className="hover:text-purple-400 transition-colors">
+                <a href="/#about" className="hover:text-purple-400 transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-purple-400 transition-colors">
+                <a href="/#skills" className="hover:text-purple-400 transition-colors">
                   Skills
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-purple-400 transition-colors">
+                <a href="/#projects" className="hover:text-purple-400 transition-colors">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-purple-400 transition-colors">
+                <a href="/#contact" className="hover:text-purple-400 transition-colors">
                   Contact
                 </a>
               </li>
@@ -63,24 +64,24 @@ export default function Footer() {
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com"
+                href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 bg-slate-900/60 border border-purple-500/30 rounded-xl text-slate-300 hover:text-purple-300 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all"
                 aria-label="GitHub"
               >
-                <Code2 size={18} />
+                <FaGithub size={18} />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://linkedin.com"
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 bg-slate-900/60 border border-purple-500/30 rounded-xl text-slate-300 hover:text-purple-300 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all"
                 aria-label="LinkedIn"
               >
-                <Briefcase size={18} />
+                <FaLinkedinIn size={18} />
               </motion.a>
             </div>
           </div>

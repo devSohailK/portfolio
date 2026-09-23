@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowRight, Code2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
 import { PERSONAL_INFO } from "@/lib/constants";
 import { motion } from "framer-motion";
 
@@ -64,7 +65,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.96 }}
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold  hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] transition-all font-mono text-sm"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold shadow-[0_0_15px_rgba(168,85,247,0.35)] hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] transition-all font-mono text-sm"
             >
               View My Work <ArrowRight size={18} />
             </motion.a>
@@ -84,7 +85,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900/40 backdrop-blur border border-purple-500/20 hover:border-purple-400 hover:shadow-[0_0_22px_rgba(168,85,247,0.55)] text-slate-300 hover:text-white rounded-xl font-semibold transition-all font-mono text-sm"
             >
-              <Code2 size={18} /> GitHub
+              <FaGithub size={18} /> GitHub
             </motion.a>
           </motion.div>
         </motion.div>

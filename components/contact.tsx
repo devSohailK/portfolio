@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, Code2, Briefcase, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 
@@ -141,7 +142,7 @@ export default function Contact() {
                     className="flex items-center justify-center h-11 w-11 rounded-xl bg-slate-900/60 border border-purple-500/30 text-slate-300 hover:text-purple-300 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all"
                     aria-label="GitHub"
                   >
-                    <Code2 size={20} />
+                    <FaGithub size={20} />
                   </motion.a>
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
@@ -152,7 +153,7 @@ export default function Contact() {
                     className="flex items-center justify-center h-11 w-11 rounded-xl bg-slate-900/60 border border-purple-500/30 text-slate-300 hover:text-purple-300 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all"
                     aria-label="LinkedIn"
                   >
-                    <Briefcase size={20} />
+                    <FaLinkedinIn size={19} />
                   </motion.a>
                 </div>
               </div>
@@ -240,7 +241,7 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={submitted}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] disabled:bg-green-600 transition-all cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] disabled:bg-green-600 transition-all cursor-pointer font-mono text-sm"
                 >
                   {submitted ? (
                     <>✓ Message sent!</>

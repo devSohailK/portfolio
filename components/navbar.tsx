@@ -5,9 +5,6 @@ import Link from "next/link";
 import {
   Menu,
   X,
-  Moon,
-  Sun,
-  Code2,
   Briefcase,
   Home,
   User,
@@ -16,7 +13,7 @@ import {
   GraduationCap,
   Mail,
 } from "lucide-react";
-import { useTheme } from "@/lib/theme-provider";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { NAV_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 
@@ -32,7 +29,6 @@ const navIcons: Record<string, React.ReactNode> = {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("#home");
 
@@ -101,7 +97,7 @@ export default function Navbar() {
                   {isUnderlined && (
                     <motion.div
                       layoutId="navbar-neon-underline"
-                      className="absolute -bottom-1 left-2 right-2 h-[4px] rounded-full bg-purple-500"
+                      className="absolute -bottom-1 left-2 right-2 h-[4px] rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.7)]"
                       transition={{
                         type: "spring",
                         stiffness: 450,
@@ -114,7 +110,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Right side - Social Links and Theme Toggle */}
+          {/* Right side - Social Links and Mobile Menu Button */}
           <div className="flex items-center gap-3">
             {/* Social Links */}
             <div className="hidden sm:flex items-center gap-1">
@@ -127,7 +123,7 @@ export default function Navbar() {
                 className="p-2 text-slate-300 hover:text-purple-400 transition-colors"
                 aria-label="GitHub"
               >
-                <Code2 size={20} />
+                <FaGithub size={19} />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
@@ -138,25 +134,14 @@ export default function Navbar() {
                 className="p-2 text-slate-300 hover:text-purple-400 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Briefcase size={20} />
+                <FaLinkedinIn size={18} />
               </motion.a>
             </div>
-
-            {/* Theme Toggle */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors border border-purple-500/20 hover:border-purple-500/40"
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-            </motion.button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white"
+              className="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white border border-purple-500/20"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -190,22 +175,22 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="px-3 py-3 flex gap-3 border-t border-purple-900/30 mt-2">
+            <div className="px-3 py-3 flex gap-4 border-t border-purple-900/30 mt-2">
               <Link
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-slate-300 hover:text-purple-400"
+                className="flex items-center gap-2 text-slate-300 hover:text-purple-400 text-sm font-medium"
               >
-                <Code2 size={18} /> GitHub
+                <FaGithub size={18} /> GitHub
               </Link>
               <Link
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-slate-300 hover:text-purple-400"
+                className="flex items-center gap-2 text-slate-300 hover:text-purple-400 text-sm font-medium"
               >
-                <Briefcase size={18} /> LinkedIn
+                <FaLinkedinIn size={18} /> LinkedIn
               </Link>
             </div>
           </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { Project } from "@/lib/projects";
-import { Code2, ExternalLink, ArrowLeft } from "lucide-react";
+import { ExternalLink, ArrowLeft } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -127,7 +128,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-xs bg-purple-950/40 text-purple-300 rounded-full border border-purple-500/30 font-medium"
+                  className="px-3 py-1 text-xs bg-purple-950/40 text-purple-300 rounded-full border border-purple-500/30 font-medium font-mono"
                 >
                   {tech}
                 </span>
@@ -167,9 +168,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-950/60 text-purple-300 border border-purple-500/40 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] rounded-xl font-semibold transition-all"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-950/60 text-purple-300 border border-purple-500/40 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] rounded-xl font-semibold transition-all font-mono text-sm"
               >
-                <Code2 size={20} /> View on GitHub
+                <FaGithub size={20} /> View on GitHub
               </motion.a>
             )}
             {project.links.demo && (
@@ -179,9 +180,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] transition-all"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] transition-all font-mono text-sm"
               >
-                <ExternalLink size={20} /> Live Demo
+                <ExternalLink size={18} /> Live Demo
               </motion.a>
             )}
           </motion.div>
