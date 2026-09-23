@@ -29,7 +29,7 @@ export default function ParticleBackground() {
       },
       particles: {
         number: {
-          value: 70,
+          value: 200,
           density: {
             enable: true,
             width: 1920,
