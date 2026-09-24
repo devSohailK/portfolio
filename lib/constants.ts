@@ -9,8 +9,8 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  github: "https://github.com/devSohailK",
+  linkedin: "https://www.linkedin.com/in/5ohail/",
   email: "sohailkhankmu@gmail.com",
   phone: "+92-336-9233904",
 };
