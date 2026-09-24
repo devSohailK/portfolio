@@ -30,11 +30,6 @@ jobs:
       - name: Build Next.js application
         run: npm run build
 
-      # Fails fast if the token is missing or invalid (remove once it works)
-      - name: Check Vercel token
-        run: |
-          echo "Token length: ${#VERCEL_TOKEN}"
-          npx vercel whoami
 
       - name: Deploy to Vercel
         run: npx vercel --prod --yes
