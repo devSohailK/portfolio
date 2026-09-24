@@ -27,7 +27,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-transparent pt-20 pb-20">
+    <section id="home" className="pt-20 pb-20 md:pt-30 md:pb-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}

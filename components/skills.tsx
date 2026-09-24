@@ -105,7 +105,7 @@ function SkillPill({ item }: { item: SkillItem }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 bg-transparent relative">
+    <section id="skills" className="py-20 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section 1: Professional Skillset */}
         <div className="text-center mb-10 md:mb-14">

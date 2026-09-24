@@ -15,6 +15,9 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,14 +29,32 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
+    setLoading(true);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to send message.");
+      }
+
+      setSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err: any) {
+      setErrorMessage(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const containerVariants = {
@@ -240,17 +261,25 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  disabled={submitted}
+                  disabled={loading || submitted}
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] disabled:bg-green-600 transition-all cursor-pointer font-mono text-sm"
                 >
-                  {submitted ? (
-                    <>✓ Message sent!</>
+                  {loading ? (
+                    "Sending..."
+                  ) : submitted ? (
+                    "✓ Message sent!"
                   ) : (
                     <>
                       Send Message <Send size={18} />
                     </>
                   )}
                 </motion.button>
+
+                {errorMessage && (
+                  <p className="text-red-400 text-sm mt-2 font-mono">{errorMessage}</p>
+                )}
+
+
               </form>
             </motion.div>
           </motion.div>
