@@ -9,6 +9,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      VERCEL_TOKEN: ${{ secrets.PORTFOLIO_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,5 +30,11 @@ jobs:
       - name: Build Next.js application
         run: npm run build
 
+      # Fails fast if the token is missing or invalid (remove once it works)
+      - name: Check Vercel token
+        run: |
+          echo "Token length: ${#VERCEL_TOKEN}"
+          npx vercel whoami
+
       - name: Deploy to Vercel
-        run: npx vercel --prod --yes --token=${{ secrets.PORTFOLIO_TOKEN }}
+        run: npx vercel --prod --yes
